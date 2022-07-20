@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @paperkiteSonny
+- 👋 Hi, I’m Sonny.
 - 👀 I’m interested in playing games and watching movies.
 - 🌱 I’m currently learning Flutter
 

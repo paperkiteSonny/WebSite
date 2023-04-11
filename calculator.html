@@ -7,9 +7,10 @@
 
 	<style type="text/css">
 		#frame_id{
-			background: #FFF803;
+			background: #C7F7FF;
 			width: 600px;
 			height: 400px;
+
 			top: 50%;
 			left: 50%;
 			position: absolute;
@@ -17,19 +18,21 @@
 			margin-left: -300px;
 
 			text-align: center;
+		}
 
-		}
 		#title_id{
-			font-size: 45px;
-			padding-top: 30px;
+			font-size: 30px;
+			padding-top: 20px;
 			font-style: italic;
-			color: #4332E1;
+			color: #004C99;
 		}
+
 		#input01_id{
 			margin-top: 50px;
 			height: 30px;
 			font-size: 25px;
 		}
+
 		#input02_id{
 			margin-top: 10px;
 			height: 30px;
@@ -41,66 +44,55 @@
 			border-radius: 50%;
 		}
 		#result_id{
+			margin-top: 10px;
 			font-size: 30px;
-			margin-top: 15px;
-			color: darkblue;
 		}
 	</style>
+
+
 	<script type="text/javascript">
 
-		var tag;
+		var tag = "Nothing";  // globle variable.  undefined.
+
+
+
 
 		function getResult() {
-			// body...
+			   // bind well.
 			var number1 = document.getElementById('input01_id').value;// String type
 			var number2 = document.getElementById('input02_id').value;
-
-			var numberReal1 = parseInt(number1);//int type
+			var numberReal1 = parseInt(number1); //int type
 			var numberReal2 = parseInt(number2);
-
+			
 			var result = 0;
 
 			if(tag == "+"){
 				result = numberReal1 + numberReal2;
-			}else if (tag == "-"){
+			}else if(tag == "-"){
 				result = numberReal1 - numberReal2;
-			}else if (tag == "*"){
-				result = numberReal1 * numberReal2;
-			}else if (tag == "/"){
-				result = numberReal1 / numberReal2;
 			}
-
-			document.getElementById('result_id').innerHTML = "The result is " + result;
-
-
-
+			// * and /
+			document.getElementById("result_id").innerHTML = "The result is " + result;
 		}
-			
-		function saveTag01() {
+
+		//For saving status of the calculation.
+		function saveTag01(){
 			tag = "+";
 		}
-		function saveTag02() {
+		function saveTag02(){
 			tag = "-";
 		}
-		function saveTag03() {
+		function saveTag03(){
 			tag = "*";
 		}
-		function saveTag04() {
+		function saveTag04(){
 			tag = "/";
 		}
-
-
-
-
-
-
 	</script>
+
 </head>
 <body>
-
 	<div id="frame_id">
-
-
 		<div id="title_id"><b>CALCULATOR</b></div>
 		<div><input type="number" id="input01_id"></div>
 		<div><input type="number" id="input02_id"></div>
@@ -108,11 +100,11 @@
 		<button onclick="saveTag01()">+</button>
 		<button onclick="saveTag02()">-</button>
 		<button onclick="saveTag03()">x</button>
-		<button onclick="saveTag04()">/</button>
-		<button onclick="getResult()">=</button>
+		<button onclick="saveTag04()">/</button> 
+		<button onclick="getResult()"> = </button>
+
 		<div id="result_id"></div>
 	</div>
-
 
 </body>
 </html>

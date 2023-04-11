@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style type="text/css">
+		#frame_id{
+			background: #FFF803;
+			width: 600px;
+			height: 400px;
+			top: 50%;
+			left: 50%;
+			position: absolute;
+			margin-top: -200px;
+			margin-left: -300px;
+
+			text-align: center;
+
+		}
+		#title_id{
+			font-size: 45px;
+			padding-top: 30px;
+			font-style: italic;
+			color: #4332E1;
+		}
+		#input01_id{
+			margin-top: 50px;
+			height: 30px;
+			font-size: 25px;
+		}
+		#input02_id{
+			margin-top: 10px;
+			height: 30px;
+			font-size: 25px;
+		}
+		button{
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+		}
+		#result_id{
+			font-size: 30px;
+			margin-top: 15px;
+			color: darkblue;
+		}
+	</style>
+	<script type="text/javascript">
+
+		var tag;
+
+		function getResult() {
+			// body...
+			var number1 = document.getElementById('input01_id').value;// String type
+			var number2 = document.getElementById('input02_id').value;
+
+			var numberReal1 = parseInt(number1);//int type
+			var numberReal2 = parseInt(number2);
+
+			var result = 0;
+
+			if(tag == "+"){
+				result = numberReal1 + numberReal2;
+			}else if (tag == "-"){
+				result = numberReal1 - numberReal2;
+			}else if (tag == "*"){
+				result = numberReal1 * numberReal2;
+			}else if (tag == "/"){
+				result = numberReal1 / numberReal2;
+			}
+
+			document.getElementById('result_id').innerHTML = "The result is " + result;
+
+
+
+		}
+			
+		function saveTag01() {
+			tag = "+";
+		}
+		function saveTag02() {
+			tag = "-";
+		}
+		function saveTag03() {
+			tag = "*";
+		}
+		function saveTag04() {
+			tag = "/";
+		}
+
+
+
+
+
+
+	</script>
+</head>
+<body>
+
+	<div id="frame_id">
+
+
+		<div id="title_id"><b>CALCULATOR</b></div>
+		<div><input type="number" id="input01_id"></div>
+		<div><input type="number" id="input02_id"></div>
+		<br><br>
+		<button onclick="saveTag01()">+</button>
+		<button onclick="saveTag02()">-</button>
+		<button onclick="saveTag03()">x</button>
+		<button onclick="saveTag04()">/</button>
+		<button onclick="getResult()">=</button>
+		<div id="result_id"></div>
+	</div>
+
+
+</body>
+</html>
